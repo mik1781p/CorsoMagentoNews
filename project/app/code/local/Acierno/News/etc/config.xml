@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<config>
+    <modules>
+        <Acierno_News>
+            <version>0.1.0</version>
+        </Acierno_News>
+    </modules>
+    <global>
+        <blocks>
+            <acierno_news>
+                <class>Acierno_News_Block</class>
+            </acierno_news>
+        </blocks>
+        <helpers>
+            <acierno_news>
+                <class>Acierno_News_Helper</class>
+            </acierno_news>
+        </helpers>
+        <models>
+            <acierno_news>
+                <class>Acierno_News_Model</class>
+                <resourceModel>acierno_news_resource</resourceModel>
+
+                <!-- un resource è un supporto al model -->
+                <!-- serivirà  a dichiare le tabelle, vera connessione con il DB-->
+                <!-- creazione del nostro DB -->
+
+            </acierno_news>
+            <acierno_news_resource>
+                <class>Acierno_News_Model_Resource</class>
+
+                <!-- è ogni oggetto/tabella del database -->
+                <!-- category in questo caso è l'entita  -->
+                <!-- che stiamo inizializzando per questo modulo, stessa -->
+                <!-- cosa story -->
+
+                <entities>
+                    <category>
+                        <table>acierno_news_category</table>
+                    </category>
+                    <story>
+                        <table>acierno_news_story</table>
+                    </story>
+                </entities>
+            </acierno_news_resource>
+        </models>
+
+        <!-- il nostro setup, quando si installa o si aggiorna -->
+        <!-- magento viene qui quando c'è creazione o modifica della tabella -->
+
+        <resources>
+            <acierno_news_setup>
+                <setup>
+                    <module>Acierno_News</module>
+                </setup>
+            </acierno_news_setup>
+        </resources>
+    </global>
+    <frontend>
+
+
+    </frontend>
+    <admin> <!-- backend -->
+
+    </admin>
+    <adminhtml> <!-- pagine del backend -->
+
+    </adminhtml>
+
+</config>

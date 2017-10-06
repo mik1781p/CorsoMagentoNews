@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<config>
+    <modules>
+        <Acierno_News>
+            <active>true</active> <!-- attiva/disattiva il modulo -->
+            <codePool>local</codePool> <!-- dove deve trovare il modulo (app/code/local) -->
+        </Acierno_News>
+    </modules>
+</config>

@@ -1,3 +1,3 @@
 #MODULE NEWS, MAGENTO
 
-Modulefor study purpose
+Module for study purpose
