@@ -5,11 +5,11 @@
  */
 
 /**
- * Acierno News Installer
+ * Acierno News Updater
  *
- * MySQL Installer.
+ * MySQL Updater from 0.1.0 to 0.2.0.
  * @author Michele Acierno <michele.acierno@thinkopen.it>
- * @version 0.1.0
+ * @version 0.2.0
  * @package Cms
  */
 
@@ -17,49 +17,55 @@
 $installer=$this;
 $installer->startSetup();
 
-//Prepare table for acierno_news_category
-$tableCategory = $installer->getConnection()->newTable($installer->getTable('acierno_news/category'));
+//Prepare table for acierno_news_story
+$tableStory = $installer->getConnection()->newTable($installer->getTable('acierno_news/story'));
 
-$tableCategory->addColumn(
-    'category_id',
+$tableStory->addColumn(
+    'story_id',
     Varien_Db_Ddl_Table::TYPE_INTEGER,
     null,
-     array('primary'=>true,'identity'=>true,'nullable'=>false),
-    'category ID'
+    array('primary'=>true,'identity'=>true,'nullable'=>false),
+    'story ID'
 )->addColumn(
-    'code',
+    'title',
     Varien_Db_Ddl_Table::TYPE_TEXT,
-    64,
+    256,
     array('nullable'=>false),
-    'category code'
+    'story title'
 )->addColumn(
-    'name',
+    'content',
     Varien_Db_Ddl_Table::TYPE_TEXT,
-    64,
+    null,
     array('nullable'=>false),
-    'category name'
+    'story content'
 )->addColumn(
     'status',
     Varien_Db_Ddl_Table::TYPE_BOOLEAN,
     null,
     array('nullable'=>false),
-    'category status'
+    'story status'
+)->addColumn(
+    'category_id',
+    Varien_Db_Ddl_Table::TYPE_INTEGER,
+    null,
+    array('nullable'=>true),
+    'story category'
 )->addColumn(
     'created_at',
     Varien_Db_Ddl_Table::TYPE_TIMESTAMP,
     null,
     array('default'=>Varien_Db_Ddl_Table::TIMESTAMP_INIT),
-    'category created at'
+    'story created at'
 )->addColumn(
     'updated_at',
     Varien_Db_Ddl_Table::TYPE_TIMESTAMP,
     null,
     array('default'=>Varien_Db_Ddl_Table::TIMESTAMP_INIT_UPDATE),
-    'category updated at'
+    'story updated at'
 );
 
 
 
 //Create tables
-$installer->getConnection()->createTable($tableCategory);
+$installer->getConnection()->createTable($tableStory);
 $installer->endSetup();
