@@ -23,9 +23,29 @@
  */
 class Acierno_News_Model_Category extends Mage_Core_Model_Abstract
 {
+
+    /**
+     * Event prefix overiding
+     *
+     * $_eventPrefix
+     * @var string
+     */
+    protected $_eventPrefix = 'acierno_news_category';
+
+
+    /**
+     * Name for the object
+     *
+     * $_eventObject
+     * @var string
+     */
+    protected $_eventObject = 'category';
+
+
     /**
      * _construct
      */
+
     protected function _construct()
     {
         $this->_init('acierno_news/category');
@@ -41,4 +61,6 @@ class Acierno_News_Model_Category extends Mage_Core_Model_Abstract
         $this->setUpdatedAt(Mage::getSingleton('core/date')->gmtDate());
         return $this;
     }
+
+
 }

@@ -26,6 +26,23 @@
 class Acierno_News_Model_Story extends Mage_Core_Model_Abstract
 {
     /**
+     * Event prefix overiding
+     *
+     * $_eventPrefix
+     * @var string
+     */
+    protected $_eventPrefix = 'acierno_news_story';
+
+
+    /**
+     * Name for the object
+     *
+     * $_eventObject
+     * @var string
+     */
+    protected $_eventObject = 'story';
+
+    /**
      * _construct
      */
     protected function _construct()
@@ -42,5 +59,33 @@ class Acierno_News_Model_Story extends Mage_Core_Model_Abstract
         parent::_beforeSave();
         $this->setUpdatedAt(Mage::getSingleton('core/date')->gmtDate());
         return $this;
+    }
+
+
+    /**
+     * getCategory
+     *
+     * Get Category object
+     * @return bool|Acierno_News_Model_Category|Mage_Core_Model_Abstract
+     */
+    public function getCategory()
+    {
+        $category = Mage::getModel('acierno_news/category')->load($this->getData('category_id'));
+        if($category && $category->getId())
+        {
+            return $category;
+        }
+        return false;
+    }
+
+    /**
+     * setCategory
+     *
+     * Set category id from Category object
+     * @param $category
+     */
+    public function setCategory(Acierno_News_Model_Category $category)
+    {
+        $this->setData('category_id', $category->getId());
     }
 }

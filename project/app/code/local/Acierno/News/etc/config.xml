@@ -57,14 +57,36 @@
         </resources>
     </global>
     <frontend>
-
-
+        <translate>
+            <modules>
+                <acierno_news>
+                    <files>
+                        <default>Acierno_News.csv</default>
+                    </files>
+                </acierno_news>
+            </modules>
+        </translate>
     </frontend>
     <admin> <!-- backend -->
-
+        <routers>
+            <acierno_news>
+                <use>admin</use>
+                <args>
+                    <module>Acierno_News</module>
+                    <frontName>acierno_news</frontName>
+                </args>
+            </acierno_news>
+        </routers>
     </admin>
     <adminhtml> <!-- pagine del backend -->
-
+        <translate>
+            <modules>
+                <acierno_news>
+                    <files>
+                       <default>Acierno_News.csv</default>
+                    </files>
+                </acierno_news>
+            </modules>
+        </translate>
     </adminhtml>
-
 </config>
