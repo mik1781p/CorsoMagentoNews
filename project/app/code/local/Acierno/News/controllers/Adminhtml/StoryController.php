@@ -23,7 +23,6 @@ class Acierno_News_Adminhtml_StoryController extends Mage_Adminhtml_Controller_A
      */
     public function indexAction()
     {
-        echo 'eccomi'; die;
         $this->loadLayout();
         $this->renderLayout();
     }

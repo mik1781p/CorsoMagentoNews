@@ -88,5 +88,12 @@
                 </acierno_news>
             </modules>
         </translate>
+        <layout>
+            <updates>
+                <acierno_news>
+                    <file>acierno_news.xml</file>
+                </acierno_news>
+            </updates>
+        </layout>
     </adminhtml>
 </config>
