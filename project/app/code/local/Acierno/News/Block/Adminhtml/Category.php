@@ -24,10 +24,13 @@ class Acierno_News_Block_Adminhtml_Category extends
 
         //Quale sarà il block group da utilizzare
         $this->_blockGroup = 'acierno_news';
+
         //Quale controller sarà utilizzato
         $this->_controller = 'adminhtml_category';
+
         //Settiamo l'header text con con traduzione
         $this->_headerText = $this->__('News Categories');
+
         //richiamiamo il construct del padre
         parent::__construct();
     }

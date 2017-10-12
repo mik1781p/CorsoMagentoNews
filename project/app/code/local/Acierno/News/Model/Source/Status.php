@@ -13,11 +13,24 @@ class Acierno_News_Model_Source_Status
     {
         return array(
             array(
-                'value'=> 0,
-                'label'=> Mage::helper('acierno_news')->__('Disabled')),
+                'value' => 0,
+                'label' => Mage::helper('acierno_news')->__('Disabled')),
             array(
-                'value'=> 1,
-                'label'=> Mage::helper('acierno_news')->__('Enabled'))
+                'value' => 1,
+                'label' => Mage::helper('acierno_news')->__('Enabled'))
         );
+
+
     }
+
+
+    public function toGridArray()
+    {
+        foreach ($this->toOptionArray() as $option) {
+            $array[$option['value']] = $option['label'];
+        }
+        return $array;
+    }
+
 }
+

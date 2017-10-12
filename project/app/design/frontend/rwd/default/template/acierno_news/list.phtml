@@ -1,0 +1,22 @@
+<?php
+/** @var Acierno_News_Model_Story stories*/
+$stories=$this->getStories();
+?>
+
+<h1><?= $this->__('Stories');?></h1>
+<?php if (!$stories->getSize())  : ?>
+    <p class="note-msg"></p><?= $this->__('There are no stories matching selection'); ?>
+<?php else : ?>
+    <div>
+        <ul>
+            <?php foreach($stories as $story) : ?>
+                <li>
+                    <div>
+                        <h2><?=  $story->getTitle();  ?></h2>
+                        <p><?=  $story->getContent();  ?></p>
+                    </div>
+                </li>
+            <?php endforeach; ?>
+        </ul>
+    </div>
+<?php endif; ?>

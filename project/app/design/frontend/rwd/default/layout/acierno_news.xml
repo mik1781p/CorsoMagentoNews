@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<layout>
+    <acierno_news_list_index>
+        <reference name="content">
+            <block type="acierno_news/story" name="" template="acierno_news/list.phtml"/>
+        </reference>
+    </acierno_news_list_index>
+</layout>

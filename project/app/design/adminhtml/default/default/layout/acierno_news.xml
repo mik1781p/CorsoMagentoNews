@@ -5,4 +5,12 @@
             <block type="acierno_news/adminhtml_category" name="acierno_news.adminhtml.category.grid"/>
         </reference>
     </acierno_news_adminhtml_category_index>
+    <acierno_news_adminhtml_category_edit>
+        <reference name="left">
+            <block type="acierno_news/adminhtml_category_edit_tabs" name="acierno.news.adminhtml.category.edit.tab" />
+        </reference>
+        <reference name="content">
+            <block type="acierno_news/adminhtml_category_edit" name="acierno.news.adminhtml.category.edit" />
+        </reference>
+    </acierno_news_adminhtml_category_edit>
 </layout>

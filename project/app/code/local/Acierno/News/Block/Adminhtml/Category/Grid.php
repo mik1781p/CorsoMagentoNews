@@ -80,7 +80,7 @@ Mage_Adminhtml_Block_Widget_Grid
                 'header' => $this->__('Status'),
                 'width' => 250,
                 'type'  => 'options',
-                'options' => Mage::getModel('acierno_news/source_status')->toOptionArray(),
+                'options' => Mage::getModel('acierno_news/source_status')->toGridArray(),
                 'renderer'=> 'acierno_news/adminhtml_category_grid_renderer_status'
             )
         );
@@ -111,9 +111,6 @@ Mage_Adminhtml_Block_Widget_Grid
 
             )
         );
-
         return parent::_prepareColumns();
     }
-
-
 }

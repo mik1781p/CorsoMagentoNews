@@ -66,6 +66,22 @@
                 </acierno_news>
             </modules>
         </translate>
+        <routers>
+            <acierno_news>
+                <use>standard</use>
+                <args>
+                    <module>Acierno_News</module>
+                    <frontName>stories</frontName>
+                </args>
+            </acierno_news>
+        </routers>
+        <layout>
+            <updates>
+                <acierno_news>
+                    <file>acierno_news.xml</file>
+                </acierno_news>
+            </updates>
+        </layout>
     </frontend>
     <admin> <!-- backend -->
         <routers>
